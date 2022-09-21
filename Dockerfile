@@ -1,9 +1,9 @@
 FROM node:14-alpine AS builder
 WORKDIR /web
 COPY package*.json /web/
-RUN npm install --force
+RUN npm install 
 COPY . .
-RUN npm run build
+RUN gatstby build
 
 FROM nginxinc/nginx-unprivileged
 WORKDIR /usr/share/nginx/html
